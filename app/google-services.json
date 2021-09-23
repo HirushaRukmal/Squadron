@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1009465827087",
+    "project_id": "squadroncinema",
+    "storage_bucket": "squadroncinema.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1009465827087:android:e1ff63273ccf4320cb687a",
+        "android_client_info": {
+          "package_name": "com.example.squadroncinema"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1009465827087-aetgmqvbs3m6d16i893u5nd9pblh2qc8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCc64EitpYC34LWTLbsBMA56FJi9Ue14uQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1009465827087-aetgmqvbs3m6d16i893u5nd9pblh2qc8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
