@@ -5,7 +5,7 @@ import android.os.Parcelable;
 
 public class ShowTicketRVModel implements Parcelable {
 
-    //variables
+    //variables variable
     private String  bookedDate;
     private String  movieDescription;
     private String  movieDuration;
