@@ -4,7 +4,7 @@
     android:id="@+id/idRLBSheet"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/blue_shade_1">
+    android:background="@drawable/common_bottom_sheet">
 
     <TextView
         android:id="@+id/idTVFilmName"
@@ -67,7 +67,7 @@
         android:id="@+id/ShowData"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/idIVFilm"
+        android:layout_below="@id/idTVMovieDuration"
         android:orientation="vertical"
         android:weightSum="2">
 
@@ -179,22 +179,22 @@
 
 
         <Button
-            android:id="@+id/idBtnCancel"
+            android:id="@+id/idBtnEdit"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
             android:layout_weight="1"
-            android:text="Cancel"
+            android:text="Edit"
             android:textAllCaps="false"
             android:textColor="@color/white" />
 
         <Button
-            android:id="@+id/idBtnNext"
+            android:id="@+id/idBtnPay"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
             android:layout_weight="1"
-            android:text="Next"
+            android:text="Pay"
             android:textAllCaps="false"
             android:textColor="@color/white" />
 

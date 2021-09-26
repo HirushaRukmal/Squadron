@@ -6,9 +6,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
@@ -22,7 +24,11 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.razorpay.Checkout;
 import com.squareup.picasso.Picasso;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 
@@ -30,7 +36,6 @@ public class PaymentMainActivity extends AppCompatActivity implements PaymentRVA
 
     private RecyclerView paymentRV;
     private ProgressBar loadingPB;
-    private FloatingActionButton addFAB;
 
     //firebase db
     private FirebaseDatabase firebaseDatabase;
@@ -45,6 +50,8 @@ public class PaymentMainActivity extends AppCompatActivity implements PaymentRVA
     //card for bottom (details about ticket booking)
     private PaymentRVAdapter paymentRVAdapter;
 
+    private TextInputEditText showSeatNumbers, showSeatCount, showTicketType, showTotal;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,7 +60,6 @@ public class PaymentMainActivity extends AppCompatActivity implements PaymentRVA
         paymentRV = findViewById(R.id.idRVPayment);
         bottomSheetRL = findViewById(R.id.idRLBSheet);
         loadingPB = findViewById(R.id.idPBLoading);
-        addFAB = findViewById(R.id.idBtnAddCourse);
         firebaseDatabase = FirebaseDatabase.getInstance();
         showTicketRVModelArrayList = new ArrayList<>();
 
@@ -69,6 +75,7 @@ public class PaymentMainActivity extends AppCompatActivity implements PaymentRVA
         paymentRV.setAdapter(paymentRVAdapter);
 
         getAllShowTicketDetails();
+
     }
 
     private void getAllShowTicketDetails() {
@@ -126,14 +133,14 @@ public class PaymentMainActivity extends AppCompatActivity implements PaymentRVA
         TextView showDuration = layout.findViewById(R.id.idTVMovieDuration);
         TextView showDate = layout.findViewById(R.id.idTVBookedDate);
         ImageView showIV = layout.findViewById(R.id.idIVFilm);
-        TextInputEditText showTotal = findViewById(R.id.idEdtTotal);
-        TextInputEditText showTicketType = findViewById(R.id.idEdtTicketType);
-        TextInputEditText showSeatCount = findViewById(R.id.idEdtTotalCount);
-        TextInputEditText showSeatNumbers = findViewById(R.id.idEdtSeatNumbers);
+         showTotal = findViewById(R.id.idEdtTotal);
+         showTicketType = findViewById(R.id.idEdtTicketType);
+         showSeatCount = findViewById(R.id.idEdtTotalCount);
+              showSeatNumbers = findViewById(R.id.idEdtSeatNumbers);
 
         //for the two buttons
-//        Button cancelBtn = layout.findViewById(R.id.idBtnCancel);
-//        Button nextBtn = layout.findViewById(R.id.idBtnNext);
+        Button edtbtn = layout.findViewById(R.id.idBtnEdit);
+        Button payBtn = layout.findViewById(R.id.idBtnPay);
 
         //get data to the card
         showNameTV.setText(showTicketRVModel.getMovieTitle());
@@ -147,5 +154,55 @@ public class PaymentMainActivity extends AppCompatActivity implements PaymentRVA
         Picasso.get().load(showTicketRVModel.getMovieImageLink()).into(showIV);
 
 
+        edtbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(PaymentMainActivity.this, PaymentEditActivity.class);
+                i.putExtra("movieTicketDetails", showTicketRVModel);
+                startActivity(i);
+            }
+        });
+
+
+        //Calculation for the ticket price
+        String TicketPrice = showTicketRVModel.getTiketsTotal();
+        String ticketCount = showTicketRVModel.getTicketCount();
+
+        String sAmount = String.valueOf(Float.valueOf(TicketPrice) * Float.valueOf(ticketCount));
+
+        //Convert and Round off
+        int amount = Math.round(Float.parseFloat(sAmount) * 100);
+
+        payBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //Initalize razorpay checkout
+                Checkout checkout = new Checkout();
+                //set key id
+                checkout.setKeyID("rzp_test_EbjsmZ4glTMO8v");
+                //set Image
+                checkout.setImage(R.drawable.rzp_logo);
+                //initalize json object
+                JSONObject object = new JSONObject();
+                try {
+                    //put name
+                    object.put("name", "Invoice #123");
+                    //put Description
+                    object.put("description", "Invoice");
+                    //put currancy unit
+                    object.put("currency", "LKR");
+                    //pay amount
+                    object.put("amount", amount);
+                    //put mobile number
+                    object.put("prefill contact", "0778078365");
+                    // put email
+                    object.put("prefill email", "testcode@gmail.com");
+                    //open razorpay checkout activity
+                    checkout.open(PaymentMainActivity.this, object);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
     }
 }

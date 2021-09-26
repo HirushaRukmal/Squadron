@@ -42,7 +42,8 @@ public class PaymentRVAdapter extends RecyclerView.Adapter<PaymentRVAdapter.View
     public void onBindViewHolder(@NonNull PaymentRVAdapter.ViewHolder holder, @SuppressLint("RecyclerView") int position) {
         ShowTicketRVModel showTicketRVModel = showTicketRVModelArrayList.get(position);
         holder.filmNameTV.setText(showTicketRVModel.getMovieTitle());
-        holder.ticketCountTV.setText("Count - "+showTicketRVModel.getTicketCount());
+        holder.ticketCountTV.setText("Ticket Count - "+showTicketRVModel.getTicketCount());
+        holder.filmDate.setText("Booked Date - "+showTicketRVModel.getBookedDate());
         Picasso.get().load(showTicketRVModel.getMovieImageLink()).into(holder.filmIV);
         setAnimation(holder.itemView,position);
         holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -69,7 +70,7 @@ public class PaymentRVAdapter extends RecyclerView.Adapter<PaymentRVAdapter.View
 
     public class ViewHolder extends RecyclerView.ViewHolder{
 
-        private TextView ticketCountTV, filmNameTV;
+        private TextView ticketCountTV, filmNameTV, filmDate;
         private ImageView filmIV;
 
         public ViewHolder(@NonNull View itemView) {
@@ -77,6 +78,7 @@ public class PaymentRVAdapter extends RecyclerView.Adapter<PaymentRVAdapter.View
             ticketCountTV = itemView.findViewById(R.id.idTVTicketCount);
             filmNameTV = itemView.findViewById(R.id.idTVFilmName);
             filmIV = itemView.findViewById(R.id.idIVFilm);
+            filmDate = itemView.findViewById(R.id.idTVFilmDate);
         }
     }
 
