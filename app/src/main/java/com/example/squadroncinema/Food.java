@@ -8,6 +8,17 @@ public class Food {
 
     public Food() {}
 
+    public Food(String name, String description, String price) {
+        Name = name;
+        Description = description;
+        this.price = price;
+    }
+
+    public Food(String name, String price) {
+        Name = name;
+        this.price = price;
+    }
+
     public String getName() {
         return Name;
     }

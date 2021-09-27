@@ -35,9 +35,7 @@ public class MainActivity extends AppCompatActivity {
         price = findViewById(R.id.price);
         btn_save = findViewById(R.id.button);
 
-        f1 = new Food();
-
-
+    f1 = new Food();
 
 
     }
@@ -52,6 +50,8 @@ public class MainActivity extends AppCompatActivity {
 
 //          Tourist newtourist = new Tourist(ed_regname.getText().toString().trim(), ed_regemail.getText().toString().trim(), Integer.parseInt(ed_regcontact.getText().toString().trim()), ed_regtype.getText().toString().trim() );
 
+           // f1 = new Food(fname.getText().toString().trim(), description.getText().toString().trim(), price.getText().toString().trim());
+
             f1.setName(fname.getText().toString().trim());
             f1.setPrice(price.getText().toString().trim());
             f1.setName(description.getText().toString().trim());
@@ -62,9 +62,5 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
-
-
-
-
 
 }
