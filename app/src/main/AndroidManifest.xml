@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SquadronCinema">
         <activity
+            android:name=".feedback"
+            android:exported="true" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
@@ -21,7 +24,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.squadroncinema.Register"
+            android:name=".Register"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,7 +33,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.squadroncinema.Login"
+            android:name=".Login"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -39,7 +42,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.squadroncinema.Myprofile"
+            android:name=".Myprofile"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -48,7 +51,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.squadroncinema.Update"
+            android:name=".Update"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -56,25 +59,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!--<activity
-             android:name="com.example.squadroncinema.Admin"
-         android:exported="true">-->
-         <!--<intent-filter>
-             <action android:name="android.intent.action.MAIN" />
-
-             <category android:name="android.intent.category.LAUNCHER" />
-         </intent-filter>-->
-     <!--</activity>
         <activity
-            android:name="com.example.squadroncinema.Adminedit"
+            android:name=".ForgotPassword"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>-->
+        </activity>
 
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

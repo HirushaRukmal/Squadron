@@ -16,13 +16,17 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
+import java.util.Map;
 
 
 public class Register extends AppCompatActivity{
@@ -33,6 +37,8 @@ public class Register extends AppCompatActivity{
     private TextView login_link;
     private FirebaseAuth mAuth;
     private DatabaseReference userDatabaseRef;
+    private FirebaseFirestore fstore;
+    private String userid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,13 +52,14 @@ public class Register extends AppCompatActivity{
         //initializing all variables
         firstnamereg    = (EditText) findViewById(R.id.firstnamereg);
         lastname        = (EditText) findViewById(R.id.lastname);
-        email           = (EditText) findViewById(R.id.email);
+        email           = (EditText) findViewById(R.id.pswdemail);
         telephone       = (EditText) findViewById(R.id.telephone);
         pswd            = (EditText) findViewById(R.id.password);
         cpswd           = (EditText) findViewById(R.id.confirmpassword);
         buttonregister  = findViewById(R.id.buttonlogin);
         login_link      = findViewById(R.id.login_link);
         mAuth           = FirebaseAuth.getInstance();
+        fstore          = FirebaseFirestore.getInstance();
 
         //creating a link to login form
         login_link.setOnClickListener(new View.OnClickListener() {
@@ -143,6 +150,19 @@ public class Register extends AppCompatActivity{
                                             public void onComplete(@NonNull Task task) {
                                                 if (task.isSuccessful()){
                                                     Toast.makeText(Register.this, "User Registered Successfully", Toast.LENGTH_SHORT).show();
+                                                    userid = mAuth.getCurrentUser().getUid();
+                                                    DocumentReference documentReference = fstore.collection("users").document(userid);
+                                                    Map<String,Object> user = new HashMap<>();
+                                                    user.put("firstname",firstName);
+                                                    user.put("lastname", lastName);
+                                                    user.put("Email", Email);
+                                                    user.put("Telephone", Tel);
+                                                    documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                        @Override
+                                                        public void onSuccess(Void unused) {
+                                                            //Log.d(TAG,"onSuccess: user profile is created for"+ userid);
+                                                        }
+                                                    });
                                                 }else {
                                                     Toast.makeText(Register.this, task.getException().toString(), Toast.LENGTH_SHORT).show();
                                                 }

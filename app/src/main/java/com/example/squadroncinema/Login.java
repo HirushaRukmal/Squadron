@@ -72,6 +72,15 @@ public class Login extends AppCompatActivity{
             }
         });
 
+        //onclick listener to password reset
+        forgotpassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(Login.this, ForgotPassword.class);
+                startActivity(i);
+            }
+        });
+
         //onclick listener to login button
         buttonlogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -89,11 +98,11 @@ public class Login extends AppCompatActivity{
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()){
                                 Toast.makeText(Login.this, "Login Successful!", Toast.LENGTH_SHORT).show();
-                                Intent i = new Intent(Login.this, MainActivity.class);
+                                Intent i = new Intent(Login.this, Myprofile.class);
                                 startActivity(i);
                                 finish();
                             }else{
-                                Toast.makeText(Login.this, task.getException().toString(), Toast.LENGTH_SHORT).show();
+                                Toast.makeText(Login.this, "Wrong Credentials!", Toast.LENGTH_SHORT).show();
                             }
                         }
                     });
