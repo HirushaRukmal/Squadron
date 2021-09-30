@@ -35,6 +35,7 @@ public class Login extends AppCompatActivity{
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener authStateListener;
 
+    /*
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
