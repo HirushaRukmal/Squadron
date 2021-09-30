@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.squadroncinema">
+    package="com.example.squadroncinema" >
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -10,13 +10,33 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.SquadronCinema">
+        android:theme="@style/Theme.SquadronCinema" >
         <activity
             android:name=".feedback"
             android:exported="true" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".PaymentEditActivity"
+            android:exported="true" />
+        <activity
+            android:name=".RazorPaymentPortalActivity"
+            android:exported="true" />
+        <activity
+            android:name=".PaymentMainActivity"
+            android:exported="true" />
+        <activity
+            android:name=".SidebarActivity"
+            android:exported="true"
+            android:label="@string/title_activity_sidebar"
+            android:theme="@style/Theme.SquadronCinema.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
