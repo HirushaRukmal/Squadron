@@ -10,7 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SquadronCinema">
         <activity
-            android:name=".AddMovieActivity"
+            android:name=".Booking"
+            android:exported="true" />
+        <activity
+            android:name=".Test"
             android:exported="true" />
         <activity
             android:name=".SidebarActivity"

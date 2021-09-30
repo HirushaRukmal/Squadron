@@ -27,4 +27,14 @@
         android:name="com.example.squadroncinema.PaymentFragment"
         android:label="@string/payment"
         tools:layout="@layout/fragment_payment" />
+    <fragment
+        android:id="@+id/nav_movies"
+        android:name="com.example.squadroncinema.Test"
+        android:label="@string/Movies"
+        tools:layout="@layout/fragment_movies" />
+    <!--    <activity-->
+<!--        android:id="@+id/home"-->
+<!--        android:name="com.example.squadroncinema.MainActivity"-->
+<!--        android:label="@string/home"-->
+<!--        tools:layout="@layout/activity_main" />-->
 </navigation>

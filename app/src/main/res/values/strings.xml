@@ -17,4 +17,6 @@
     <string name="squadron_cinema">Squadron Cinema</string>
     <string name="squadroncinema_gmail_com">squadronCinema@gmail.com</string>
     <string name="log_out">Log Out</string>
+    <string name="home">home</string>
+    <string name="Movies">Movies</string>
 </resources>
