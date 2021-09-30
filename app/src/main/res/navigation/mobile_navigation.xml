@@ -27,4 +27,9 @@
         android:name="com.example.squadroncinema.PaymentFragment"
         android:label="@string/payment"
         tools:layout="@layout/fragment_payment" />
+    <fragment
+        android:id="@+id/nav_myprofile"
+        android:name="com.example.squadroncinema.MyprofileFragment"
+        android:label="@string/myprofile"
+        tools:layout="@layout/fragment_myprofile" />
 </navigation>
