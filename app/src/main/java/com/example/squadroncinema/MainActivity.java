@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -52,9 +53,17 @@ public class MainActivity extends AppCompatActivity {
 
            // f1 = new Food(fname.getText().toString().trim(), description.getText().toString().trim(), price.getText().toString().trim());
 
-            f1.setName(fname.getText().toString().trim());
-            f1.setPrice(price.getText().toString().trim());
-            f1.setName(description.getText().toString().trim());
+            String name = fname.getText().toString().trim();
+            String description_ = description.getText().toString().trim();
+            String price_ = price.getText().toString().trim();
+
+
+
+            f1.setName(name);
+            f1.setPrice(price_);
+            f1.setDescription(description_);
+
+            Log.d("TAG", "senddata: ");
 
             db.push().setValue(f1);
 

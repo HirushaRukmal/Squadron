@@ -1,7 +1,10 @@
 package com.example.squadroncinema;
 
 
-public class Food {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class Food implements Parcelable {
     private String Name;
     private String Description;
     private String price;
@@ -18,6 +21,24 @@ public class Food {
         Name = name;
         this.price = price;
     }
+
+    protected Food(Parcel in) {
+        Name = in.readString();
+        Description = in.readString();
+        price = in.readString();
+    }
+
+    public static final Creator<Food> CREATOR = new Creator<Food>() {
+        @Override
+        public Food createFromParcel(Parcel in) {
+            return new Food(in);
+        }
+
+        @Override
+        public Food[] newArray(int size) {
+            return new Food[size];
+        }
+    };
 
     public String getName() {
         return Name;
@@ -41,5 +62,18 @@ public class Food {
 
     public void setPrice(String price) {
         this.price = price;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+
+        dest.writeString(price);
+        dest.writeString(Description);
+        dest.writeString(Name);
     }
 }

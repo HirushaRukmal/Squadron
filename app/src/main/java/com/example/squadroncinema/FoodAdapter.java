@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -22,13 +23,16 @@ public class FoodAdapter  extends RecyclerView.Adapter<FoodAdapter.ViewHolder> {
     private int outSideTemp;
     private int measuredWidth;
     // data is passed into the constructor
+    private onDeviceNameClickListener onDeviceNameClickListener;
 
     public FoodAdapter(Context context,
-                       ArrayList<Food> serviceRecordsLists) {
+                       ArrayList<Food> serviceRecordsLists,
+                       onDeviceNameClickListener onDeviceNameClickListener) {
 
         this.serviceRecordsLists = serviceRecordsLists;
         this.context = context;
         this.measuredWidth = measuredWidth;
+        this.onDeviceNameClickListener = onDeviceNameClickListener;
     }
 
     // inflates the row layout from xml when needed
@@ -42,7 +46,7 @@ public class FoodAdapter  extends RecyclerView.Adapter<FoodAdapter.ViewHolder> {
         params.height = (ViewGroup.LayoutParams.WRAP_CONTENT);
         view.setLayoutParams(params);*/
 
-        return new ViewHolder(view);
+        return new ViewHolder(view, onDeviceNameClickListener);
     }
 
     // bind the data
@@ -77,13 +81,18 @@ public class FoodAdapter  extends RecyclerView.Adapter<FoodAdapter.ViewHolder> {
         TextView tv_name;
         TextView  tv_des;
         TextView tv_price;
+        EditText tv_qut;
 
-        public ViewHolder(View itemView) {
+        onDeviceNameClickListener onDeviceNameClickListener;
+
+        public ViewHolder(View itemView , onDeviceNameClickListener onDeviceNameClickListener) {
             super(itemView);
 
              tv_name = itemView.findViewById(R.id.tv_name);
              tv_des = itemView.findViewById(R.id.tv_description);
              tv_price = itemView.findViewById(R.id.tv_price);
+            tv_qut = itemView.findViewById(R.id.tv_qut);
+            this.onDeviceNameClickListener = onDeviceNameClickListener;
 
             itemView.setOnClickListener(this);
 
@@ -92,6 +101,11 @@ public class FoodAdapter  extends RecyclerView.Adapter<FoodAdapter.ViewHolder> {
         @Override
         public void onClick(View v) {
 
+            onDeviceNameClickListener.onDeviceNameClick(getAdapterPosition(), Integer.parseInt(tv_qut.getText().toString()));
         }
+
+    }
+    public interface onDeviceNameClickListener{
+        void onDeviceNameClick(int position, int qut);
     }
 }
