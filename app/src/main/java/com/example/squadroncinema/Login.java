@@ -118,7 +118,7 @@ public class Login extends AppCompatActivity{
         });
     }
 
-    @Override
+    /*@Override
     protected void onStart() {
         super.onStart();
         FirebaseUser firebaseUser = mAuth.getCurrentUser();
@@ -127,5 +127,5 @@ public class Login extends AppCompatActivity{
             startActivity(i);
             this.finish();
         }
-    }
+    }*/
 }
