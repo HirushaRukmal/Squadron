@@ -7,38 +7,41 @@ public class MovieRVModal implements Parcelable {
 
     private String mId;
     private String mName;
-    private String mDescription;
     private String mType;
     private String mDuration;
+    private String mImage;
+    private String mDescription;
     private String mStartDate;
     private String mEndDate;
-    private String mImage;
+
 
     public MovieRVModal(){
 
     }
 
-    public MovieRVModal(String mId, String mName, String mDescription, String mType, String mDuration, String mStartDate, String mEndDate, String mImage) {
+    public MovieRVModal(String mId, String mName, String mType, String mImage, String mDuration, String mDescription, String mStartDate, String mEndDate) {
         this.mId = mId;
         this.mName = mName;
-        this.mDescription = mDescription;
         this.mType = mType;
         this.mDuration = mDuration;
+        this.mImage = mImage;
+        this.mDescription = mDescription;
         this.mStartDate = mStartDate;
         this.mEndDate = mEndDate;
-        this.mImage = mImage;
+
     }
 
 
     protected MovieRVModal(Parcel in) {
         mId = in.readString();
         mName = in.readString();
-        mDescription = in.readString();
         mType = in.readString();
         mDuration = in.readString();
+        mImage = in.readString();
+        mDescription = in.readString();
         mStartDate = in.readString();
         mEndDate = in.readString();
-        mImage = in.readString();
+
     }
 
     public static final Creator<MovieRVModal> CREATOR = new Creator<MovieRVModal>() {
@@ -69,14 +72,6 @@ public class MovieRVModal implements Parcelable {
         this.mName = mName;
     }
 
-    public String getmDescription() {
-        return mDescription;
-    }
-
-    public void setmDescription(String mDescription) {
-        this.mDescription = mDescription;
-    }
-
     public String getmType() {
         return mType;
     }
@@ -91,6 +86,22 @@ public class MovieRVModal implements Parcelable {
 
     public void setmDuration(String mDuration) {
         this.mDuration = mDuration;
+    }
+
+    public String getmImage() {
+        return mImage;
+    }
+
+    public void setmImage(String mImage) {
+        this.mImage = mImage;
+    }
+
+    public String getmDescription() {
+        return mDescription;
+    }
+
+    public void setmDescription(String mDescription) {
+        this.mDescription = mDescription;
     }
 
     public String getmStartDate() {
@@ -109,13 +120,6 @@ public class MovieRVModal implements Parcelable {
         this.mEndDate = mEndDate;
     }
 
-    public String getmImage() {
-        return mImage;
-    }
-
-    public void setmImage(String mImage) {
-        this.mImage = mImage;
-    }
 
 
     @Override
@@ -127,12 +131,13 @@ public class MovieRVModal implements Parcelable {
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(mId);
         dest.writeString(mName);
-        dest.writeString(mDescription);
         dest.writeString(mType);
         dest.writeString(mDuration);
+        dest.writeString(mImage);
+        dest.writeString(mDescription);
         dest.writeString(mStartDate);
         dest.writeString(mEndDate);
-        dest.writeString(mImage);
+
     }
 }
 

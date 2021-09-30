@@ -10,9 +10,12 @@
         android:id="@+id/idTVMovieName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="4dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="4dp"
         android:padding="4dp"
-        android:text="Film Name"
+        android:text="Movie Name"
         android:textColor="@color/white"
         android:textSize="15sp"
         android:textStyle="bold" />
@@ -28,14 +31,17 @@
         android:src="@mipmap/ic_launcher" />
 
     <TextView
-        android:id="@+id/idTVMovieType"
+        android:id="@+id/idTVMovieDescription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/idTVMovieDescription"
-        android:layout_margin="4dp"
+        android:layout_below="@id/idTVMovieDuration"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="4dp"
         android:layout_toRightOf="@id/idIVMovie"
         android:padding="3dp"
-        android:text="Date"
+        android:text="Description"
         android:textColor="@color/white" />
 
 
@@ -44,23 +50,27 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/idTVMovieType"
-        android:layout_margin="4dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="4dp"
         android:layout_toRightOf="@id/idIVMovie"
         android:padding="3dp"
-        android:text="Movie Duration"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        android:textStyle="bold" />
+        android:text="Duration"
+        android:textColor="@color/white" />
 
     <TextView
-        android:id="@+id/idTVMovieDescription"
+        android:id="@+id/idTVMovieType"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/idTVMovieName"
-        android:layout_margin="4dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="4dp"
         android:layout_toRightOf="@id/idIVMovie"
         android:padding="3dp"
-        android:text="Decriptoion"
+        android:text="Type"
         android:textColor="@color/white" />
 
 
@@ -68,7 +78,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/idTVMovieDuration"
+        android:layout_below="@id/idTVMovieDescription"
         android:orientation="horizontal"
         android:weightSum="2">
 
