@@ -10,24 +10,25 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SquadronCinema">
         <activity
+            android:name=".DeleteSuccesfull"
+            android:exported="true" />
+        <activity
             android:name=".DeleteFood"
             android:exported="true" />
         <activity
             android:name=".FoodList"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".PlaceOrder"
             android:exported="true" />
         <activity
             android:name=".Home"
-            android:exported="true">  <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".AvailableFoods"

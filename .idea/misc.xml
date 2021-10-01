@@ -6,6 +6,7 @@
         <entry key="app/src/main/res/drawable/ic_hamburger__1_.xml" value="0.12777777777777777" />
         <entry key="app/src/main/res/layout/activity_available_foods.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_delete_food.xml" value="0.28703703703703703" />
+        <entry key="app/src/main/res/layout/activity_delete_succesfull.xml" value="0.275" />
         <entry key="app/src/main/res/layout/activity_food_list.xml" value="0.28703703703703703" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.28703703703703703" />
