@@ -9,6 +9,7 @@ public class Food implements Parcelable {
     private String Description;
     private String price;
 
+
     public Food() {}
 
     public Food(String name, String description, String price) {

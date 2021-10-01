@@ -19,4 +19,5 @@ public class PlaceOrder extends AppCompatActivity {
         cartData = getIntent().getExtras().getParcelableArrayList("cart_data");
         Log.d("TAG", "onCreate: ");
     }
+
 }
