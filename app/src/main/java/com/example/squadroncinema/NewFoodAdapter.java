@@ -1,10 +1,12 @@
 package com.example.squadroncinema;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.EventLogTags;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -39,6 +41,21 @@ public class NewFoodAdapter extends RecyclerView.Adapter<NewFoodAdapter.MyViewHo
         holder.Description.setText(newfood.getdescription());
         holder.price.setText(newfood.getPrice());
 
+        holder.btnDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent i = new Intent(v.getContext(), DeleteFood.class);
+                i.putExtra("name", newfood.getname());
+                i.putExtra("des", newfood.getdescription());
+                i.putExtra("price", newfood.getPrice());
+
+                v.getContext().startActivity(i);
+
+
+            }
+        });
+
 
 
 
@@ -52,6 +69,7 @@ public class NewFoodAdapter extends RecyclerView.Adapter<NewFoodAdapter.MyViewHo
     public static class MyViewHolder extends RecyclerView.ViewHolder{
 
         TextView name, Description, price;
+        Button btnDelete;
 
 
         public MyViewHolder(@NonNull View itemView) {
@@ -60,6 +78,9 @@ public class NewFoodAdapter extends RecyclerView.Adapter<NewFoodAdapter.MyViewHo
             name = itemView.findViewById(R.id.tv_name);
             Description = itemView.findViewById(R.id.tv_description);
             price = itemView.findViewById(R.id.tv_price);
+            btnDelete = itemView.findViewById(R.id.btn_delete);
+
+
         }
     }
 }
