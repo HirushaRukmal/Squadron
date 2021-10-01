@@ -9,7 +9,7 @@
     android:layout_marginTop="10dp"
     android:layout_marginEnd="10dp"
     android:orientation="vertical"
-    app:cardBackgroundColor="#FFFFFF"
+    app:cardBackgroundColor="@color/teal_200"
     app:cardCornerRadius="7dp"
     app:cardElevation="10dp"
     app:layout_constraintEnd_toEndOf="parent"
@@ -41,15 +41,15 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Food Name : "
-                    android:textStyle="bold"
-                    android:textSize="16dp" />
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/tv_name"
@@ -57,8 +57,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
                     android:text="name"
-                    android:textSize="16dp"
-                    />
+                    android:textSize="16dp" />
 
 
             </LinearLayout>
@@ -75,9 +74,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Description : "
-                android:textStyle="bold"
                 android:textSize="16dp"
-                />
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tv_description"
@@ -99,9 +97,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Price : "
-                android:textStyle="bold"
                 android:textSize="16dp"
-                />
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tv_price"
@@ -109,8 +106,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
                 android:text="Price"
-                android:textSize="16dp"
-               />
+                android:textSize="16dp" />
 
         </LinearLayout>
 
@@ -125,20 +121,18 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Input Qty : "
-                android:textStyle="bold"
                 android:textSize="16dp"
-                />
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/tv_qut"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
-                android:text="1"
-                android:textSize="16dp"
                 android:hint="1"
                 android:inputType="number"
-                />
+                android:text="1"
+                android:textSize="16dp" />
 
         </LinearLayout>
 

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/photo_1557683304_673a23048d34"
     tools:context=".Home">
 
     <ImageView
@@ -36,12 +37,15 @@
         android:id="@+id/btn_create"
         android:layout_width="105dp"
         android:layout_height="58dp"
-        android:background="#BBFBF4"
+        android:background="#EF5F08"
+        android:backgroundTint="@android:color/holo_orange_light"
         android:text="Add Food"
         android:textColor="#111111"
+        android:textStyle="bold"
+        app:cornerRadius="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.088"
+        app:layout_constraintHorizontal_bias="0.019"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.925" />
@@ -51,22 +55,26 @@
         android:layout_width="105dp"
         android:layout_height="58dp"
         android:layout_marginLeft="10dp"
+        android:background="#EF5F08"
         android:text="View Food"
+        android:textColor="#111111"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/btn_create"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.083"
+        app:layout_constraintHorizontal_bias="0.238"
         app:layout_constraintStart_toEndOf="@+id/btn_create"
+        android:radius="3dip"
+
         app:layout_constraintTop_toTopOf="@+id/btn_create"
-        app:layout_constraintVertical_bias="0.0"
-        android:background="#BBFBF4"
-        android:textColor="#111111"/>
+        app:layout_constraintVertical_bias="0.0" />
+
 
     <Button
         android:id="@+id/btn_delete"
         android:layout_width="105dp"
         android:layout_height="58dp"
         android:layout_marginLeft="10dp"
-        android:background="#BBFBF4"
+        android:background="#EF5F08"
         android:text="Delete Food"
         android:textColor="#111111"
         app:layout_constraintBottom_toBottomOf="@+id/btn_create"
@@ -82,14 +90,15 @@
         android:layout_width="105dp"
         android:layout_height="58dp"
         android:layout_marginLeft="10dp"
-        android:background="#BBFBF4"
+        android:background="#EF5F08"
         android:text="Delete Food"
         android:textColor="#111111"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/btn_create"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/btn_create"
         app:layout_constraintTop_toTopOf="@+id/btn_create"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
