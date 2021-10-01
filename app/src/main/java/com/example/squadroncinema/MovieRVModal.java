@@ -19,7 +19,7 @@ public class MovieRVModal implements Parcelable {
 
     }
 
-    public MovieRVModal(String mId, String mName, String mType, String mImage, String mDuration, String mDescription, String mStartDate, String mEndDate) {
+    public MovieRVModal(String mId, String mName, String mType, String mDuration, String mImage, String mDescription, String mStartDate, String mEndDate) {
         this.mId = mId;
         this.mName = mName;
         this.mType = mType;

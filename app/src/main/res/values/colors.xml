@@ -10,6 +10,7 @@
 
     <color name="blue_shade_1">#0e2433</color>
     <color name="blue_shade_2">#1C4966</color>
+    <color name="blue">#9AFEFF</color>
     <color name="mtrl_textinput_default_box_stroke_color" tools:override="true">#0e2433</color>
 
 </resources>
