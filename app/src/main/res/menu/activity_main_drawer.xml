@@ -21,5 +21,10 @@
             android:icon="@drawable/ic_menu_payment"
             android:title="@string/payment" />
 
+        <item
+            android:id="@+id/nav_myprofile"
+            android:icon="@drawable/ic_menu_person"
+            android:title="@string/myprofile" />
+
     </group>
 </menu>
