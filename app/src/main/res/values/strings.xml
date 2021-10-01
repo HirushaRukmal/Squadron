@@ -60,4 +60,5 @@
     <string name="logout">LOGOUT</string>
     <string name="PasswordC">Confirm Password</string>
     <string name="myprofile">My profile</string>
+    <string name="Calculator">Calculator</string>
 </resources>

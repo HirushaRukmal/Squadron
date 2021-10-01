@@ -7,6 +7,10 @@
     <!--        android:title="@string/action_settings"-->
     <!--        app:showAsAction="never" />-->
     <item
+        android:id="@+id/cal"
+        android:title="@string/Calculator" />
+    <item
         android:id="@+id/logout"
         android:title="@string/log_out" />
+
 </menu>

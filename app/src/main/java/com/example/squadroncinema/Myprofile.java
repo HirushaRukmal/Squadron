@@ -5,6 +5,8 @@ import static com.google.firebase.firestore.FieldValue.delete;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -19,6 +21,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -46,10 +49,11 @@ public class Myprofile extends AppCompatActivity {
     //declaring variables
     private TextView fName, lName, email, telephone;
     private Button delete,update;
+    FloatingActionButton btn;
     private FirebaseAuth fAuth;
     private DatabaseReference ref;
     private FirebaseFirestore fStore;
-    private String userId;
+    private String userId, secondaryApp;
     private FirebaseUser fuser;
 
 
@@ -57,10 +61,10 @@ public class Myprofile extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        //Viewing tha application on fullscreen
+        /*Viewing tha application on fullscreen
         requestWindowFeature(Window.FEATURE_NO_TITLE);  //hiding the titlebar
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        getSupportActionBar().hide();  //hiding the actionbar
+        getSupportActionBar().hide();  //hiding the actionbar*/
 
         //referred layout
         setContentView(R.layout.activity_myprofile);
@@ -72,6 +76,7 @@ public class Myprofile extends AppCompatActivity {
         telephone = findViewById(R.id.number);
         delete    = findViewById(R.id.delete);
         update    = findViewById(R.id.update);
+        btn = findViewById(R.id.feedbackbtn);
 
         //initializing the variables to the firebase db
         fAuth  = FirebaseAuth.getInstance();
@@ -115,6 +120,41 @@ public class Myprofile extends AppCompatActivity {
             }
         });
 
+        //setting the feedback button
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Myprofile.this, Feedback.class));
+            }
+        });
+
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.sidebar, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+        switch (id) {
+            case R.id.logout:
+                Toast.makeText(this, "User Logged Out Succefully", Toast.LENGTH_SHORT).show();
+                fAuth.signOut();
+                Intent i = new Intent(Myprofile.this, Login.class);
+                startActivity(i);
+                this.finish();
+                return true;
+            case R.id.cal:
+                Intent j = new Intent(Myprofile.this, Calculator.class);
+                startActivity(j);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+
     }
 
 
@@ -124,6 +164,14 @@ public class Myprofile extends AppCompatActivity {
         //deleting data from the realtime db
         ref = FirebaseDatabase.getInstance().getReference("users").child(userId);
         ref.removeValue();
+
+        //deleting data from the firebase auth
+        fuser.delete().addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+
+            }
+        });
 
         //deleting data from the fire store collection
         fStore.collection("users").document(userId).delete().addOnCompleteListener(new OnCompleteListener<Void>() {

@@ -17,6 +17,7 @@ import com.example.squadroncinema.databinding.ActivityUpdateBinding;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
@@ -46,16 +47,17 @@ public class Update extends AppCompatActivity {
     private String userId;
     private FirebaseUser fuser;
     ActivityUpdateBinding binding;
+    FloatingActionButton btn;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        //Viewing tha application on fullscreen
+        /*Viewing tha application on fullscreen
         requestWindowFeature(Window.FEATURE_NO_TITLE);  //hiding the titlebar
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        getSupportActionBar().hide();  //hiding the actionbar
+        getSupportActionBar().hide();  //hiding the actionbar*/
 
 
         binding = ActivityUpdateBinding.inflate(getLayoutInflater());

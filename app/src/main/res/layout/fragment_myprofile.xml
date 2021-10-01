@@ -2,24 +2,37 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bck1"
-    android:theme="@style/Theme.AppCompat.NoActionBar">
+    tools:context=".MyprofileFragment">
 
-    <EditText
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
         android:id="@+id/email"
         android:layout_width="303dp"
-        android:layout_height="47dp"
+        android:layout_height="23dp"
         android:layout_marginTop="8dp"
+        android:backgroundTint="@color/purple_700"
         android:ems="10"
         android:hint="@string/email"
+        android:textAlignment="center"
         android:inputType="textEmailAddress"
         android:textColor="@color/purple_700"
         android:textColorHint="@color/purple_700"
-        android:backgroundTint="@color/purple_700"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView14" />
+
+    <View
+        android:layout_width="300dp"
+        android:layout_height="2dp"
+        android:layout_marginTop="28dp"
+        android:background="@color/purple_700"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.486"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView14" />
 
@@ -27,14 +40,14 @@
         android:id="@+id/textView13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="53dp"
-        android:layout_marginTop="21dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="52dp"
         android:layout_marginEnd="232dp"
         android:text="TELEPHONE"
-        android:textSize="16sp"
         android:textColor="@color/purple_700"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.023"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/email" />
 
@@ -42,14 +55,14 @@
         android:id="@+id/textView14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="53dp"
-        android:layout_marginTop="19dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="44dp"
         android:layout_marginEnd="232dp"
         android:text="EMAIL"
-        android:textSize="16sp"
         android:textColor="@color/purple_700"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.069"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lastname_placholder" />
 
@@ -58,42 +71,58 @@
         android:layout_width="120dp"
         android:layout_height="50dp"
         android:layout_marginStart="58dp"
-        android:layout_marginTop="45dp"
-        android:layout_marginEnd="45dp"
-        android:backgroundTint="@color/purple_700"
-        android:hint="@string/save"
-        android:text="SAVE"
+        android:layout_marginTop="88dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="120dp"
+        android:hint="@string/update"
+        android:text="UPDATE"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/delete"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/number" />
+        app:layout_constraintTop_toBottomOf="@+id/view" />
 
     <Button
         android:id="@+id/delete"
         android:layout_width="120dp"
         android:layout_height="50dp"
-        android:layout_marginStart="45dp"
-        android:layout_marginTop="45dp"
-        android:layout_marginEnd="56dp"
-        android:backgroundTint="@color/purple_700"
-        android:hint="@string/cancel"
-        android:text="CANCEL"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="88dp"
+        android:layout_marginEnd="58dp"
+        android:layout_marginBottom="120dp"
+        android:hint="@string/delete"
+        android:text="DELETE"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/update"
-        app:layout_constraintTop_toBottomOf="@+id/number" />
+        app:layout_constraintTop_toBottomOf="@+id/view" />
 
-    <EditText
+    <View
+        android:layout_width="300dp"
+        android:layout_height="2dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="19dp"
+        android:background="@color/purple_700"
+        app:layout_constraintBottom_toTopOf="@+id/textView12"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/firstname_title" />
+
+    <TextView
         android:id="@+id/firstname"
-        android:layout_width="305dp"
+        android:layout_width="307dp"
         android:layout_height="46dp"
-        android:layout_marginTop="11dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/purple_700"
         android:ems="10"
         android:hint="@string/firstname"
         android:inputType="textPersonName"
+        android:text="@string/firstname"
+        android:textAlignment="center"
         android:textColor="@color/purple_700"
         android:textColorHint="@color/purple_700"
-        android:backgroundTint="@color/purple_700"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/firstname_title" />
 
@@ -101,8 +130,8 @@
         android:id="@+id/firstname_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="53dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="50dp"
         android:layout_marginEnd="232dp"
         android:text="FIRSTNAME"
         android:textColor="@color/purple_700"
@@ -110,67 +139,77 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
+    <TextView
         android:id="@+id/number"
-        android:layout_width="303dp"
-        android:layout_height="52dp"
+        android:layout_width="304dp"
+        android:layout_height="21dp"
         android:layout_marginTop="11dp"
+        android:backgroundTint="@color/purple_700"
         android:ems="10"
         android:hint="@string/telephone"
+        android:textAlignment="center"
         android:inputType="phone"
-        android:textColorHint="@color/purple_700"
         android:textColor="@color/purple_700"
-        android:backgroundTint="@color/purple_700"
+        android:textColorHint="@color/purple_700"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
-    <EditText
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="300dp"
+        android:layout_height="2dp"
+        android:layout_marginTop="3dp"
+        android:background="@color/purple_700"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.459"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/number" />
+
+    <TextView
         android:id="@+id/lastname_placholder"
         android:layout_width="305dp"
         android:layout_height="0dp"
-        android:layout_marginTop="11dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/purple_700"
         android:ems="10"
         android:hint="@string/lastname"
         android:inputType="textPersonName"
-        android:textColorHint="@color/purple_700"
+        android:text="@string/lastname"
+        android:textAlignment="center"
         android:textColor="@color/purple_700"
-        android:backgroundTint="@color/purple_700"
+        android:textColorHint="@color/purple_700"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.509"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+    <View
+        android:layout_width="300dp"
+        android:layout_height="2dp"
+        android:background="@color/purple_700"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+        app:layout_constraintTop_toBottomOf="@+id/lastname_placholder" />
 
     <TextView
         android:id="@+id/textView12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="53dp"
+        android:layout_marginStart="48dp"
         android:layout_marginTop="23dp"
         android:layout_marginEnd="232dp"
         android:text="LASTNAME"
-        android:textSize="16sp"
         android:textColor="@color/purple_700"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/firstname" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:text="UPDATE PROFILE"
-        android:textColor="@color/purple_700"
-        android:textSize="34sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
