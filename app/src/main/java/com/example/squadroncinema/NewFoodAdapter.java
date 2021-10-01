@@ -35,9 +35,11 @@ public class NewFoodAdapter extends RecyclerView.Adapter<NewFoodAdapter.MyViewHo
 
 
         newfood newfood = list.get(position);
-        holder.name.setText(newfood.getName());
-        holder.Description.setText(newfood.getDescription());
+        holder.name.setText(newfood.getname());
+        holder.Description.setText(newfood.getdescription());
         holder.price.setText(newfood.getPrice());
+
+
 
 
     }

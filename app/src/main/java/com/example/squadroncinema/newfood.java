@@ -4,11 +4,23 @@ public class newfood {
 
     String Name, Description, price;
 
-    public String getName() {
+    public void setName(String name) {
+        Name = name;
+    }
+
+    public void setDescription(String description) {
+        Description = description;
+    }
+
+    public void setPrice(String price) {
+        this.price = price;
+    }
+
+    public String getname() {
         return Name;
     }
 
-    public String getDescription() {
+    public String getdescription() {
         return Description;
     }
 
