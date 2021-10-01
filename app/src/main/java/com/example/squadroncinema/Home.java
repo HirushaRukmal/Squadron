@@ -10,6 +10,7 @@ import android.widget.Button;
 public class Home extends AppCompatActivity {
 
     private Button btn_next;
+    private Button btn_list;
     private Button btn_create;
 
     @Override
@@ -19,6 +20,7 @@ public class Home extends AppCompatActivity {
 
         btn_next = findViewById(R.id.btn_next);
         btn_create = findViewById(R.id.btn_create);
+        btn_list = findViewById(R.id.btn_list);
 
         btn_next.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -35,6 +37,16 @@ public class Home extends AppCompatActivity {
                 startActivity(intent_main);
             }
         });
+
+        btn_list.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent_main = new Intent(getApplicationContext(), FoodList.class);
+                startActivity(intent_main);
+            }
+        });
+
+
 
 
 

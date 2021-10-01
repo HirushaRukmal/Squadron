@@ -77,4 +77,19 @@
         app:layout_constraintVertical_bias="1.0" />
 
 
+    <Button
+        android:id="@+id/btn_list"
+        android:layout_width="105dp"
+        android:layout_height="58dp"
+        android:layout_marginLeft="10dp"
+        android:background="#BBFBF4"
+        android:text="Delete Food"
+        android:textColor="#111111"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_create"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/btn_create"
+        app:layout_constraintTop_toTopOf="@+id/btn_create"
+        app:layout_constraintVertical_bias="1.0" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,8 +8,9 @@ import android.widget.TextView;
 
 public class DeleteFood extends AppCompatActivity {
     String str;
-    TextView tv;
+    TextView tv, tv2, tv3, tv4;
     String des;
+    String pri;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,18 +18,22 @@ public class DeleteFood extends AppCompatActivity {
         setContentView(R.layout.activity_delete_food);
 
         tv = (TextView)findViewById(R.id.text1);
+        tv2 = (TextView)findViewById(R.id.text3);
+        tv3 = (TextView)findViewById(R.id.text4);
+
+
         Intent intent = getIntent();
         str = intent.getStringExtra("name");
 
-        tv = (TextView)findViewById(R.id.text3);
-        intent = getIntent();
-        str = intent.getStringExtra("description");
 
-        tv = (TextView)findViewById(R.id.text4);
-        intent = getIntent();
-        str = intent.getStringExtra("price");
+        des = intent.getStringExtra("des");
+
+
+        pri = intent.getStringExtra("price");
 
 
         tv.setText(str);
+        tv2.setText(des);
+        tv3.setText(pri);
     }
 }
