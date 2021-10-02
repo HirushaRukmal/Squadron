@@ -3,15 +3,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/back3"
     tools:context=".PaymentFragment">
 
-    <TextView
+
+    <LinearLayout
+        android:id="@+id/LinearLayout1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Payment Function"
-        android:layout_marginTop="140dp"
-        android:layout_marginLeft="120dp"
-        android:textStyle="bold"
-        android:textSize="24sp"/>
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="550dp"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/bt_pay"
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:background="@color/blue_shade_1"
+            android:text="Pay"
+            android:textSize="30dp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
 
 </FrameLayout>

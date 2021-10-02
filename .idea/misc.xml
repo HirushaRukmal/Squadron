@@ -3,11 +3,20 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Dell/Desktop/MAD Navigation/Squadron/app/src/main/res/drawable/common_background.xml" value="0.31666666666666665" />
         <entry key="..\:/Users/Dell/Desktop/MAD Navigation/Squadron/app/src/main/res/drawable/custom_button_back.xml" value="0.3828125" />
+        <entry key="..\:/Users/Dell/Desktop/MAD Navigation/Squadron/app/src/main/res/drawable/green_outline_select.xml" value="0.2421875" />
         <entry key="..\:/Users/Dell/Desktop/MAD Navigation/Squadron/app/src/main/res/drawable/ic_menu_gallery.xml" value="0.3171875" />
         <entry key="..\:/Users/Dell/Desktop/MAD Navigation/Squadron/app/src/main/res/drawable/ic_menu_payment.xml" value="0.3828125" />
         <entry key="..\:/Users/Dell/Desktop/MAD Navigation/Squadron/app/src/main/res/drawable/side_nav_bar.xml" value="0.37864583333333335" />
+        <entry key="..\:/Users/Dell/Desktop/MAD Navigation/Squadron/app/src/main/res/drawable/white_outline_select.xml" value="0.23020833333333332" />
+        <entry key="..\:/Users/Dell/Desktop/MAD Navigation/Squadron/app/src/main/res/layout/activity_bottom_sheet_dialog.xml" value="0.33" />
+        <entry key="..\:/Users/Dell/Desktop/MAD Navigation/Squadron/app/src/main/res/layout/activity_bottom_sheet_payment.xml" value="0.33" />
+        <entry key="..\:/Users/Dell/Desktop/MAD Navigation/Squadron/app/src/main/res/layout/activity_edit_payment.xml" value="0.18" />
+        <entry key="..\:/Users/Dell/Desktop/MAD Navigation/Squadron/app/src/main/res/layout/activity_payment_edit.xml" value="0.19947916666666668" />
+        <entry key="..\:/Users/Dell/Desktop/MAD Navigation/Squadron/app/src/main/res/layout/activity_payment_main.xml" value="0.2833333333333333" />
         <entry key="..\:/Users/Dell/Desktop/MAD Navigation/Squadron/app/src/main/res/layout/activity_sidebar.xml" value="0.3625" />
+        <entry key="..\:/Users/Dell/Desktop/MAD Navigation/Squadron/app/src/main/res/layout/activity_test_payment.xml" value="0.5" />
         <entry key="..\:/Users/Dell/Desktop/MAD Navigation/Squadron/app/src/main/res/layout/app_bar_sidebar.xml" value="0.3625" />
         <entry key="..\:/Users/Dell/Desktop/MAD Navigation/Squadron/app/src/main/res/layout/content_sidebar.xml" value="0.20260416666666667" />
         <entry key="..\:/Users/Dell/Desktop/MAD Navigation/Squadron/app/src/main/res/layout/fragment_gallery.xml" value="0.30104166666666665" />
@@ -15,6 +24,7 @@
         <entry key="..\:/Users/Dell/Desktop/MAD Navigation/Squadron/app/src/main/res/layout/fragment_payment.xml" value="0.3625" />
         <entry key="..\:/Users/Dell/Desktop/MAD Navigation/Squadron/app/src/main/res/layout/fragment_slideshow.xml" value="0.3625" />
         <entry key="..\:/Users/Dell/Desktop/MAD Navigation/Squadron/app/src/main/res/layout/nav_header_sidebar.xml" value="0.3625" />
+        <entry key="..\:/Users/Dell/Desktop/MAD Navigation/Squadron/app/src/main/res/layout/payment_rv_item.xml" value="0.25" />
         <entry key="..\:/Users/Dell/Desktop/MAD Navigation/Squadron/app/src/main/res/menu/activity_main_drawer.xml" value="0.3625" />
         <entry key="..\:/Users/Dell/Desktop/MAD Navigation/Squadron/app/src/main/res/menu/sidebar.xml" value="0.3625" />
         <entry key="..\:/Users/Dell/Desktop/MAD Navigation/Squadron/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.3728205128205128" />

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_margin="5dp"
+    app:cardCornerRadius="4dp"
+    app:cardElevation="3dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/idIVFilm"
+            android:layout_width="80dp"
+            android:layout_height="100dp"
+            android:layout_margin="20dp"
+            android:background="@drawable/ic_movie"
+            android:scaleType="centerCrop" />
+
+        <TextView
+            android:id="@+id/idPayedStatus"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/idIVFilm"
+            android:background="@drawable/green_outline_select"
+            android:padding="5dp"
+            android:singleLine="true"
+            android:text="Not Payed"
+            android:textColor="@color/blue_shade_1"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/idTVMovieName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/idPayedStatus"
+            android:layout_toRightOf="@id/idIVFilm"
+            android:padding="5dp"
+            android:singleLine="true"
+            android:text="Show Name"
+            android:textColor="@color/blue_shade_1"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/idTVMovieBookedDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/idTVMovieName"
+            android:layout_toRightOf="@id/idIVFilm"
+            android:padding="5dp"
+            android:singleLine="true"
+            android:text="Booked Date"
+            android:textColor="@color/blue_shade_1"
+            android:textSize="15sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/idTVTicketID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/idIVFilm"
+            android:layout_below="@id/idTVMovieBookedDate"
+            android:padding="5dp"
+            android:singleLine="true"
+            android:text="Ticket ID"
+            android:textColor="@color/blue_shade_1"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>

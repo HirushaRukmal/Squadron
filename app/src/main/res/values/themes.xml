@@ -22,8 +22,15 @@
     <style name="Theme.SquadronCinema.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.SquadronCinema.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />s
+
     <style name="TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
         <item name="boxStrokeColor">#296098</item>
         <item name="boxStrokeWidth">1dp</item>
+    </style>
+
+
+
+    <style name="AppModalStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/round_drawable</item>
     </style>
 </resources>
