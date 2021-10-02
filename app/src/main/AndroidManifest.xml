@@ -9,11 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SquadronCinema">
-
-<!--        <activity-->
-<!--            android:name=".EditMovie"-->
-<!--            android:exported="true" />-->
-
+        <activity
+            android:name=".UpdateMovies"
+            android:exported="true" />
+        <activity
+            android:name=".EditMovie"
+            android:exported="true" />
         <activity
             android:name=".AddMovieActivity"
             android:exported="true" />

@@ -44,13 +44,15 @@ public class MainActivity extends AppCompatActivity {
 
 
                 if (sp1.getSelectedItem().toString() == "LKR" && sp2.getSelectedItem().toString() == "USD") {
-                    tot = amount * 70.0;
+                    tot = amount * 190.0;
                     Toast.makeText(getApplicationContext(), tot.toString(), Toast.LENGTH_LONG).show();
                 } else if (sp1.getSelectedItem().toString() == "LKR" && sp2.getSelectedItem().toString() == "IRS") {
-                    tot = amount * 179.0;
+                    tot = amount * 123.0;
                     Toast.makeText(getApplicationContext(), tot.toString(), Toast.LENGTH_LONG).show();
+
                 }
             }
         });
+
     }
 }

@@ -149,7 +149,7 @@ public class Test extends AppCompatActivity implements MovieRVAdapter.MovieClick
         movieDurationTV.setText(movieRVModal.getmDuration());
         movieDescriptionTV.setText(movieRVModal.getmDescription());
         Picasso.get().load(movieRVModal.getmImage()).into(movieIV);
-
+//
         cancelBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -158,7 +158,7 @@ public class Test extends AppCompatActivity implements MovieRVAdapter.MovieClick
 //                startActivity(i);
             }
         });
-
+//
         bookBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

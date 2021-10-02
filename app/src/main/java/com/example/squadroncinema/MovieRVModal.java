@@ -5,7 +5,7 @@ import android.os.Parcelable;
 
 public class MovieRVModal implements Parcelable {
 
-    private String mId;
+    private String Id;
     private String mName;
     private String mType;
     private String mDuration;
@@ -19,8 +19,8 @@ public class MovieRVModal implements Parcelable {
 
     }
 
-    public MovieRVModal(String mId, String mName, String mType, String mDuration, String mImage, String mDescription, String mStartDate, String mEndDate) {
-        this.mId = mId;
+    public MovieRVModal(String id, String mName, String mType, String mDuration, String mImage, String mDescription, String mStartDate, String mEndDate) {
+        this.Id = id;
         this.mName = mName;
         this.mType = mType;
         this.mDuration = mDuration;
@@ -33,7 +33,7 @@ public class MovieRVModal implements Parcelable {
 
 
     protected MovieRVModal(Parcel in) {
-        mId = in.readString();
+        Id = in.readString();
         mName = in.readString();
         mType = in.readString();
         mDuration = in.readString();
@@ -57,11 +57,11 @@ public class MovieRVModal implements Parcelable {
     };
 
     public String getmId() {
-        return mId;
+        return Id;
     }
 
     public void setmId(String mId) {
-        this.mId = mId;
+        this.Id = mId;
     }
 
     public String getmName() {
@@ -129,7 +129,7 @@ public class MovieRVModal implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(mId);
+        dest.writeString(Id);
         dest.writeString(mName);
         dest.writeString(mType);
         dest.writeString(mDuration);
