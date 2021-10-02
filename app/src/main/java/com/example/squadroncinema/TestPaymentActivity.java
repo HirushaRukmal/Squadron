@@ -140,6 +140,7 @@ public class TestPaymentActivity extends AppCompatActivity implements PaymentRVA
 
         Button updateBtn = layout.findViewById(R.id.idBtnUpdate);
         Button payBtn = layout.findViewById(R.id.idBtnPay);
+        Button payerDetails = layout.findViewById(R.id.idSavePayerDetails);
 
         Picasso.get().load(movieTicketBookingRVModal.getmImage()).into(movieIV);
         FilmNameTV.setText("Title : " + movieTicketBookingRVModal.getmName());
@@ -178,6 +179,14 @@ public class TestPaymentActivity extends AppCompatActivity implements PaymentRVA
             public void onClick(View v) {
                 Intent i = new Intent(TestPaymentActivity.this, EditPaymentActivity.class);
                 i.putExtra("MovieTicketBooking", movieTicketBookingRVModal);
+                startActivity(i);
+            }
+        });
+
+        payerDetails.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(TestPaymentActivity.this, AddPayerDetailsActivity.class);
                 startActivity(i);
             }
         });

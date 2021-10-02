@@ -6,7 +6,7 @@ import android.os.Parcelable;
 public class PaymentRVModel implements Parcelable {
 
     private String pID;
-    private String paymentID;
+    private String transactionID;
     private String userID;
     private String amount;
     private String date;
@@ -14,9 +14,9 @@ public class PaymentRVModel implements Parcelable {
     public PaymentRVModel() {
     }
 
-    public PaymentRVModel(String pID, String paymentID, String userID, String amount, String date) {
+    public PaymentRVModel(String pID, String transactionID, String userID, String amount, String date) {
         this.pID = pID;
-        this.paymentID = paymentID;
+        this.transactionID = transactionID;
         this.userID = userID;
         this.amount = amount;
         this.date = date;
@@ -24,24 +24,10 @@ public class PaymentRVModel implements Parcelable {
 
     protected PaymentRVModel(Parcel in) {
         pID = in.readString();
-        paymentID = in.readString();
+        transactionID = in.readString();
         userID = in.readString();
         amount = in.readString();
         date = in.readString();
-    }
-
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(pID);
-        dest.writeString(paymentID);
-        dest.writeString(userID);
-        dest.writeString(amount);
-        dest.writeString(date);
-    }
-
-    @Override
-    public int describeContents() {
-        return 0;
     }
 
     public static final Creator<PaymentRVModel> CREATOR = new Creator<PaymentRVModel>() {
@@ -64,12 +50,12 @@ public class PaymentRVModel implements Parcelable {
         this.pID = pID;
     }
 
-    public String getPaymentID() {
-        return paymentID;
+    public String getTransactionID() {
+        return transactionID;
     }
 
-    public void setPaymentID(String paymentID) {
-        this.paymentID = paymentID;
+    public void setTransactionID(String transactionID) {
+        this.transactionID = transactionID;
     }
 
     public String getUserID() {
@@ -94,5 +80,19 @@ public class PaymentRVModel implements Parcelable {
 
     public void setDate(String date) {
         this.date = date;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(pID);
+        dest.writeString(transactionID);
+        dest.writeString(userID);
+        dest.writeString(amount);
+        dest.writeString(date);
     }
 }
